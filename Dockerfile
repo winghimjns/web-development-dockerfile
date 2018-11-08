@@ -57,6 +57,8 @@ RUN apt-get clean
 
 RUN rm -rf /var/lib/apt/lists/*
 
+COPY 000-default.conf /etc/apache2/sites-available
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN locale-gen en_US.UTF-8 en_GB.UTF-8 zh_TW.UTF-8 ko_KR.UTF-8
