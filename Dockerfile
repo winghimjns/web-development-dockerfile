@@ -65,3 +65,5 @@ RUN a2enmod rewrite
 
 WORKDIR /var/www/html
 
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+
