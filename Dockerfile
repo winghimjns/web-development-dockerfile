@@ -1,4 +1,4 @@
-# version 0.0.1
+# version 0.0.3
 FROM ubuntu:18.04
 
 MAINTAINER winghimjns
@@ -12,6 +12,8 @@ RUN echo 'Asia/Seoul' > /etc/timezone
 RUN apt-get update
 
 RUN apt-get install -yq --no-install-recommends \
+    systemd \
+    mysql-server \
     ca-certificates \
     apt-utils \
     curl \
@@ -68,4 +70,3 @@ RUN a2enmod rewrite
 WORKDIR /var/www/html
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
-
